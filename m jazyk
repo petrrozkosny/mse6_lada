@@ -1,0 +1,7 @@
+let
+   tabulka = Excel.CurrentWorkbook(){[Name="ovladani"]}[Content],
+    cesta_souboru = tabulka[hodnota]{0},
+    Zdroj = Excel.Workbook(File.Contents(cesta_souboru), null, true),
+    data_nova_Table = Zdroj{[Item="data_nova",Kind="Table"]}[Data]
+   in
+data_nova_Table
